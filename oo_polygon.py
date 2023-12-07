@@ -3,12 +3,12 @@ import turtle
 
 
 class Polygon:
-    def __init__(self):
+    def __init__(self, side=3):
         turtle.speed(0)
         turtle.bgcolor('black')
         turtle.tracer(0)
         turtle.colormode(255)
-        self.num_sides = random.randint(3, 5)  # triangle, square, or pentagon
+        self.num_sides = side  # triangle, square, or pentagon
         self.size = random.randint(50, 150)
         self.orientation = random.randint(0, 90)
         self.location = [random.randint(-300, 300), random.randint(-200, 200)]
@@ -45,8 +45,31 @@ class Polygon:
                              self.location, self.color, self.border_size)
 
 
-plgn = Polygon()
-reduction_ratio = 0.618
-plgn.reposition(reduction_ratio)
+# main
+while True:
+    print("Welcome to polygon generator")
+    print("1. for random side")
+    print("2. for set side")
+    print("3. to exit program")
+    choice = int(input("Please select:"))
+    print("***************")
+    if choice == 1:
+        print("selected random")
+        side = random.randint(3, 5)
+        plgn = Polygon(side)
+        reduction_ratio = 0.618
+        plgn.reposition(reduction_ratio)
+    elif choice == 2:
+        print("selected manual")
+        print("side much equal or greater than 3")
+        side = input("Select side:")
+        if side >= 3:
+            plgn = Polygon()
+            reduction_ratio = 0.618
+            plgn.reposition(reduction_ratio)
+    elif choice == 3:
+        break
+    else:
+        print("invalid value")
 
 turtle.done()
