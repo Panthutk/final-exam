@@ -66,7 +66,7 @@ while True:
         print("side much equal or greater than 3")
         side = int(input("Select side:"))
         if side >= 3:
-            plgn = Polygon()
+            plgn = Polygon(side)
             reduction_ratio = 0.618
             plgn.reposition(reduction_ratio)
     elif choice == 3:
