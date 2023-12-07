@@ -1,6 +1,8 @@
 import random
 import turtle
 
+# PLEASE READ README BEFORE SCORE MY PROGRAM :( TY kub Ajan Paruj
+
 
 class Polygon:
     def __init__(self, side=3):
