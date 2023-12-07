@@ -64,7 +64,7 @@ while True:
     elif choice == 2:
         print("selected manual")
         print("side much equal or greater than 3")
-        side = input("Select side:")
+        side = int(input("Select side:"))
         if side >= 3:
             plgn = Polygon()
             reduction_ratio = 0.618
